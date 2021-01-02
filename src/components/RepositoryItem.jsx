@@ -1,13 +1,20 @@
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+
+const styles = StyleSheet.create({
+    item: {
+        /*height: 150,*/
+    },
+});
 
 const RepositoryItem = (props) => {
     return (
         <TouchableHighlight
+            style={styles.item}
             key={props.item.key}
             onShowUnderlay={props.separators.highlight}
             onHideUnderlay={props.separators.unhighlight}>
-            <View style={{ backgroundColor: 'white' }}>
+            <View style={{ backgroundColor: 'gray' }}>
                 <Text>Full name: {props.item.fullName}</Text>
                 <Text>Description: {props.item.description}</Text>
                 <Text>Language: {props.item.language}</Text>
