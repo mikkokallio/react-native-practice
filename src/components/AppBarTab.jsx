@@ -5,7 +5,7 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
     container: {
-
+        padding: 10
     },
     tab: {
         //
