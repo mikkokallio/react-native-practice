@@ -1,24 +1,30 @@
 import React from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import Constants from 'expo-constants';
+import { Link } from "react-router-native";
 import Text from './Text';
-import theme from './theme';
 
 const styles = StyleSheet.create({
     container: {
-        
+
     },
     tab: {
         //
     }
 });
 
-const AppBarTab = () => {
+const AppBarTab = (props) => {
     return <View style={styles.container}>
         <TouchableWithoutFeedback>
-            <Text fontWeight='bold' color='primary'>Repositories</Text>
+            <Link to={props.link}>
+                <View><Text fontWeight='bold' color='primary'>{props.text}</Text></View>
+            </Link>
         </TouchableWithoutFeedback>
     </View>;
 };
 
 export default AppBarTab;
+
+
+
+<Text>About</Text>
+
