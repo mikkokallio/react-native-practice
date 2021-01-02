@@ -6,6 +6,7 @@ import theme from './theme';
 
 const styles = StyleSheet.create({
     container: {
+        
     },
     tab: {
         //
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
 const AppBarTab = () => {
     return <View style={styles.container}>
         <TouchableWithoutFeedback>
-            <Text fontWeight='bold' color='textSecondary'>Repositories</Text>
+            <Text fontWeight='bold' color='primary'>Repositories</Text>
         </TouchableWithoutFeedback>
     </View>;
 };
