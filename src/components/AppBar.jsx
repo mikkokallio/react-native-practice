@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         paddingTop: Constants.statusBarHeight,
         paddingLeft: 10,
         backgroundColor: theme.colors.backgroundTab,
-        height: 100,
+        /*height: 100,*/
     },
     tab: {
         //
