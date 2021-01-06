@@ -3,6 +3,7 @@ import { Text, View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import FormikTextInput from './FormikTextInput'
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({
   field: {
@@ -42,30 +43,31 @@ const validationSchema = yup.object().shape({
     .required('Password is required'),
 });
 
-const onSubmit = (values) => {
-  console.log(values);
-};
-
 const SignInForm = ({ onSubmit }) => {
   return (
     <View>
       <FormikTextInput style={styles.field} name="username" placeholder="Username" />
       <FormikTextInput style={styles.field} name="password" placeholder="Password" secureTextEntry />
       <TouchableWithoutFeedback onPress={onSubmit}>
-        <Text style={styles.button}>Log in</Text>
+        <View><Text style={styles.button}>Log in</Text></View>
       </TouchableWithoutFeedback>
     </View>
   );
 };
 
 const SignIn = () => {
-  const onSubmit = values => {
-    //const mass = parseFloat(values.mass);
-    //const height = parseFloat(values.height);
+  const [signIn] = useSignIn();
 
-    //if (!isNaN(mass) && !isNaN(height) && height !== 0) {
-    //  console.log(`Your body mass index is: ${getBodyMassIndex(mass, height)}`);
-    //}
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+    console.log(values);
+
+    try {
+      const { data } = await signIn({ username, password });
+      console.log('Data is: ', data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

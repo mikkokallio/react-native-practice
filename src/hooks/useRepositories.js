@@ -19,12 +19,3 @@ const useRepositories = () => {
 };
 
 export default useRepositories;
-
-/*
-This can be achieved using the useQuery hook. The gql template literal tag can be imported from the Apollo Boost as instructed earlier.
-Consider using the structure recommended earlier for the GraphQL related code.
-To avoid future caching issues, use the cache-and-network fetch policy in the query. It can be used with the useQuery hook like this:
-
-
-The changes in the useRepositories hook should not affect the RepositoryList component in any way.
-*/
