@@ -74,11 +74,5 @@ describe('RepositoryList', () => {
       expect(rateNodes[1]).toHaveTextContent('72');
       expect(revwNodes[1]).toHaveTextContent('3');
     });
-    //Note that the repository data contains two repositories, which means that you need to check that both repositories' information is present.
-    // repository's name, description, language, forks count, stargazers count, rating average, and review count
-    //Remember that you can use the toHaveTextContent matcher to check whether a node has certain textual content.
-    // You can use the getAllByTestId query to get all nodes with a certain testID prop as an array.
-    // If you are unsure what is being rendered, use the debug function to see the serialized rendering result.
-
   });
 });
