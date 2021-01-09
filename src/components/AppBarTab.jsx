@@ -14,17 +14,14 @@ const styles = StyleSheet.create({
 
 const AppBarTab = (props) => {
     return <View style={styles.container}>
-        <TouchableWithoutFeedback>
-            <Link to={props.link}>
+        <TouchableWithoutFeedback onPress={() => props.press()}>
+        <View>{!props.link && <View><Text fontWeight='bold' color='primary'>{props.text}</Text></View>}
+
+            {props.link && <Link to={props.link}>
                 <View><Text fontWeight='bold' color='primary'>{props.text}</Text></View>
-            </Link>
+            </Link>}</View>
         </TouchableWithoutFeedback>
     </View>;
 };
 
 export default AppBarTab;
-
-
-
-<Text>About</Text>
-
