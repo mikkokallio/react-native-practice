@@ -62,29 +62,29 @@ const RepositoryItem = (props) => {
                         />
                     </View>
                     <View style={styles.right}>
-                        <Text style={{ fontWeight: 'bold' }}>{props.item.fullName}</Text>
-                        <Text>{props.item.description}</Text>
+                        <Text style={{ fontWeight: 'bold' }}  testID="name">{props.item.fullName}</Text>
+                        <Text testID="description">{props.item.description}</Text>
                         <View style={styles.horizontal}>
-                            <Text style={styles.lang}>{props.item.language}</Text>
+                            <Text style={styles.lang} testID="language">{props.item.language}</Text>
                             <Text></Text>
                         </View>
                     </View>
                 </View>
                 <View style={styles.horizontal}>
                     <View style={styles.figure}>
-                        <Text style={styles.centerbold}>{format(props.item.stargazersCount)}</Text>
+                        <Text style={styles.centerbold} testID="star">{format(props.item.stargazersCount)}</Text>
                         <Text style={styles.center}>Stars</Text>
                     </View>
                     <View style={styles.figure}>
-                        <Text style={styles.centerbold}>{format(props.item.forksCount)}</Text>
+                        <Text style={styles.centerbold} testID="fork">{format(props.item.forksCount)}</Text>
                         <Text style={styles.center}>Forks</Text>
                     </View>
                     <View style={styles.figure}>
-                        <Text style={styles.centerbold}>{format(props.item.reviewCount)}</Text>
+                        <Text style={styles.centerbold} testID="review">{format(props.item.reviewCount)}</Text>
                         <Text style={styles.center}>Reviews</Text>
                     </View>
                     <View style={styles.figure}>
-                        <Text style={styles.centerbold}>{props.item.ratingAverage}</Text>
+                        <Text style={styles.centerbold} testID="rate">{props.item.ratingAverage}</Text>
                         <Text style={styles.center}>Rating</Text>
                     </View>
                 </View>
