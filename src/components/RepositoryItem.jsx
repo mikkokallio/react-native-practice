@@ -2,6 +2,18 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
 
 const styles = StyleSheet.create({
+    button: {
+        marginTop: 10,
+        marginHorizontal: 10,
+        padding: 4,
+        backgroundColor: 'blue',
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        borderWidth: 1,
+        borderColor: "#787878",
+        borderRadius: 6,
+    },
     item: {
         /*height: 150,*/
     },
@@ -45,6 +57,7 @@ const styles = StyleSheet.create({
 const format = n => n > 999 ? (n / 1000).toFixed(1) + 'k' : n
 
 const RepositoryItem = (props) => {
+    if (!props.item) return null;
     return (
         <TouchableHighlight
             style={styles.item}
@@ -62,7 +75,7 @@ const RepositoryItem = (props) => {
                         />
                     </View>
                     <View style={styles.right}>
-                        <Text style={{ fontWeight: 'bold' }}  testID="name">{props.item.fullName}</Text>
+                        <Text style={{ fontWeight: 'bold' }} testID="name">{props.item.fullName}</Text>
                         <Text testID="description">{props.item.description}</Text>
                         <View style={styles.horizontal}>
                             <Text style={styles.lang} testID="language">{props.item.language}</Text>
@@ -88,6 +101,9 @@ const RepositoryItem = (props) => {
                         <Text style={styles.center}>Rating</Text>
                     </View>
                 </View>
+                {props.single && <TouchableWithoutFeedback>
+                    <View><Text style={styles.button}>Log in</Text></View>
+                </TouchableWithoutFeedback>}
             </View>
         </TouchableHighlight>
     );

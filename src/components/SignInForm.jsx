@@ -31,7 +31,7 @@ const SignInForm = ({ onSubmit }) => {
     <View>
       <FormikTextInput style={styles.field} name="username" placeholder="Username" testID="usernameField" />
       <FormikTextInput style={styles.field} name="password" placeholder="Password" testID="passwordField" secureTextEntry />
-      <TouchableWithoutFeedback  testID="submitButton" onPress={onSubmit}>
+      <TouchableWithoutFeedback testID="submitButton" onPress={onSubmit}>
         <View><Text style={styles.button}>Log in</Text></View>
       </TouchableWithoutFeedback>
     </View>
