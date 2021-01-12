@@ -46,6 +46,10 @@ const SingleRepo = () => {
     );
 };
 
+const formatDate = (date) => {
+    return date.substring(8,10) + '.' + date.substring(5,7) + '.' + date.substring(0,4)
+}
+
 const ReviewItem = ({ review }) => {
     return (
         <View style={{ backgroundColor: '#eeeeee' }}>
@@ -55,7 +59,7 @@ const ReviewItem = ({ review }) => {
                 </View>
                 <View style={styles.right}>
                     <Text style={{ fontWeight: 'bold' }}>{review.user.username}</Text>
-                    <Text>{review.createdAt}</Text>
+                    <Text>{formatDate(review.createdAt)}</Text>
                     <Text>{review.text}</Text>
                 </View>
             </View>
