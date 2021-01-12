@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import * as Linking from 'expo-linking';
 
 const styles = StyleSheet.create({
     button: {
@@ -58,12 +59,19 @@ const format = n => n > 999 ? (n / 1000).toFixed(1) + 'k' : n
 
 const RepositoryItem = (props) => {
     if (!props.item) return null;
+
+    const handlePress = () => {
+        Linking.openURL(props.item.url);
+    };
+
     return (
         <TouchableHighlight
             style={styles.item}
             key={props.item.key}
-            onShowUnderlay={props.separators.highlight}
-            onHideUnderlay={props.separators.unhighlight}>
+            onPress={props.press}
+        //onShowUnderlay={!props.single && props.separators.highlight}
+        //onHideUnderlay={!props.single && props.separators.unhighlight}
+        >
             <View style={{ backgroundColor: '#eeeeee' }}>
                 <View style={styles.horizontal}>
                     <View style={styles.left}>
@@ -102,7 +110,7 @@ const RepositoryItem = (props) => {
                     </View>
                 </View>
                 {props.single && <TouchableWithoutFeedback>
-                    <View><Text style={styles.button}>Log in</Text></View>
+                    <View><Text style={styles.button} onPress={handlePress}>Open in GitHub</Text></View>
                 </TouchableWithoutFeedback>}
             </View>
         </TouchableHighlight>

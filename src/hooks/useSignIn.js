@@ -14,7 +14,6 @@ const useSignIn = () => {
 
     const signIn = async ({ username, password }) => {
         const { data } = await mutate({ variables: { username, password } });
-        console.log(data.authorize.accessToken);
         await authStorage.setAccessToken(data.authorize.accessToken);
         history.push("/");
         client.resetStore();
