@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import { useHistory } from "react-router-dom";
 

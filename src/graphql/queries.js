@@ -33,6 +33,20 @@ query GetOneRepo($id: ID!) {
       reviewCount
       ratingAverage
       ownerAvatarUrl
+      reviews {
+        edges {
+          node {
+            id
+            text
+            rating
+            createdAt
+            user {
+              id
+              username
+            }
+          }
+        }
+      }  
     }
   }
 `;
